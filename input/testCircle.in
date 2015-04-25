@@ -1,0 +1,8 @@
+outputFolderName = ../out/
+inputFolderName = ../input/
+
+imageFileName = testCircle.csv
+imageRows = 128
+imageCols = 128
+
+doSubDivide = 0

@@ -1,0 +1,3 @@
+/home/bo/Desktop/CADproject/bin/prelim/CMakeFiles/prelim.dir
+/home/bo/Desktop/CADproject/bin/proj/CMakeFiles/proj.dir
+/home/bo/Desktop/CADproject/bin/trans/CMakeFiles/trans.dir

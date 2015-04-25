@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bo/Desktop/CADproject/src/trans/Image2TriMesh.cpp
+Image2TriMesh.h
+/home/bo/Desktop/CADproject/src/trans/Image2TriMesh.h
+
+/home/bo/Desktop/CADproject/src/trans/Image2TriMesh.h
+iostream
+-
+vector
+-
+string
+-
+

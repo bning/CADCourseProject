@@ -1,0 +1,8 @@
+outputFolderName = /home/arjun/CADproject/out/
+inputFolderName = /home/arjun/CADproject/input/
+
+imageFileName = testCircle.csv
+imageRows = 128
+imageCols = 128
+
+doSubDivide = 0

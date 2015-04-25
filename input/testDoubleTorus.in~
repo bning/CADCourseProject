@@ -1,0 +1,8 @@
+outputFolderName = /home/arjun/CADproject/out/
+inputFolderName = /home/arjun/CADproject/input/
+
+imageFileName = testDoubleTorus.csv
+imageRows = 128
+imageCols = 256
+
+doSubDivide = 0

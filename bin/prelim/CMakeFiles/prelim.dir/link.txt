@@ -1,0 +1,2 @@
+/usr/bin/ar cr libprelim.a  CMakeFiles/prelim.dir/ImagePreLim.o CMakeFiles/prelim.dir/Param.o
+/usr/bin/ranlib libprelim.a
