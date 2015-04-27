@@ -25,6 +25,9 @@ private:
 public:
 	ImagePreLim(char *name);
 	void ReadImage(vector<vector<Vertex> > &image);
+	string getOutputFolderName();
+	string getInputFolderName();
+	string getImageFileName();
 
 private:
 	void ReadCSVimage(string fileName, vector<int> &array);

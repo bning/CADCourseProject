@@ -63,3 +63,16 @@ void ImagePreLim::ReadCSVimage(string fileName, vector<int> &array) {
 		ind++;
 	}
 }
+
+
+string ImagePreLim::getImageFileName() {
+	return this->imageFileName;
+}
+
+string ImagePreLim::getInputFolderName() {
+	return this->inputFolderName;
+}
+
+string ImagePreLim::getOutputFolderName() {
+	return this->outputFolderName;
+}
