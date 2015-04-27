@@ -3,4 +3,7 @@
 
 postproc/CMakeFiles/postproc.dir/PostProcessor.o: /home/bo/Documents/CAD/CADCourseProject/src/postproc/PostProcessor.cpp
 postproc/CMakeFiles/postproc.dir/PostProcessor.o: /home/bo/Documents/CAD/CADCourseProject/src/postproc/PostProcessor.h
+postproc/CMakeFiles/postproc.dir/PostProcessor.o: /home/bo/Documents/CAD/CADCourseProject/src/trans/Image2TriMesh.h
+postproc/CMakeFiles/postproc.dir/PostProcessor.o: /home/bo/Documents/CAD/CADCourseProject/src/util/Vector2.h
+postproc/CMakeFiles/postproc.dir/PostProcessor.o: /home/bo/Documents/CAD/CADCourseProject/src/util/Vector3.h
 

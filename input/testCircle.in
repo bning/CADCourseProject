@@ -1,5 +1,5 @@
-outputFolderName = ../out/
-inputFolderName = ../input/
+outputFolderName = out/
+inputFolderName = input/
 
 imageFileName = testCircle.csv
 imageRows = 128

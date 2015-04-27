@@ -154,6 +154,21 @@ proj/fast:
 .PHONY : proj/fast
 
 # target to build an object file
+Application.o:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/Application.o
+.PHONY : Application.o
+
+# target to preprocess a source file
+Application.i:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/Application.i
+.PHONY : Application.i
+
+# target to generate assembly for a file
+Application.s:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/Application.s
+.PHONY : Application.s
+
+# target to build an object file
 main.o:
 	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/main.o
 .PHONY : main.o
@@ -181,6 +196,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... proj"
 	@echo "... rebuild_cache"
+	@echo "... Application.o"
+	@echo "... Application.i"
+	@echo "... Application.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -72,14 +72,39 @@ proj/CMakeFiles/proj.dir/main.o.provides: proj/CMakeFiles/proj.dir/main.o.requir
 
 proj/CMakeFiles/proj.dir/main.o.provides.build: proj/CMakeFiles/proj.dir/main.o
 
+proj/CMakeFiles/proj.dir/Application.o: proj/CMakeFiles/proj.dir/flags.make
+proj/CMakeFiles/proj.dir/Application.o: /home/bo/Documents/CAD/CADCourseProject/src/proj/Application.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object proj/CMakeFiles/proj.dir/Application.o"
+	cd /home/bo/Documents/CAD/CADCourseProject/bin/proj && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/proj.dir/Application.o -c /home/bo/Documents/CAD/CADCourseProject/src/proj/Application.cpp
+
+proj/CMakeFiles/proj.dir/Application.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/proj.dir/Application.i"
+	cd /home/bo/Documents/CAD/CADCourseProject/bin/proj && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/Documents/CAD/CADCourseProject/src/proj/Application.cpp > CMakeFiles/proj.dir/Application.i
+
+proj/CMakeFiles/proj.dir/Application.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/proj.dir/Application.s"
+	cd /home/bo/Documents/CAD/CADCourseProject/bin/proj && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/Documents/CAD/CADCourseProject/src/proj/Application.cpp -o CMakeFiles/proj.dir/Application.s
+
+proj/CMakeFiles/proj.dir/Application.o.requires:
+.PHONY : proj/CMakeFiles/proj.dir/Application.o.requires
+
+proj/CMakeFiles/proj.dir/Application.o.provides: proj/CMakeFiles/proj.dir/Application.o.requires
+	$(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/Application.o.provides.build
+.PHONY : proj/CMakeFiles/proj.dir/Application.o.provides
+
+proj/CMakeFiles/proj.dir/Application.o.provides.build: proj/CMakeFiles/proj.dir/Application.o
+
 # Object files for target proj
 proj_OBJECTS = \
-"CMakeFiles/proj.dir/main.o"
+"CMakeFiles/proj.dir/main.o" \
+"CMakeFiles/proj.dir/Application.o"
 
 # External object files for target proj
 proj_EXTERNAL_OBJECTS =
 
 proj/proj: proj/CMakeFiles/proj.dir/main.o
+proj/proj: proj/CMakeFiles/proj.dir/Application.o
 proj/proj: proj/CMakeFiles/proj.dir/build.make
 proj/proj: prelim/libprelim.a
 proj/proj: trans/libtrans.a
@@ -93,6 +118,7 @@ proj/CMakeFiles/proj.dir/build: proj/proj
 .PHONY : proj/CMakeFiles/proj.dir/build
 
 proj/CMakeFiles/proj.dir/requires: proj/CMakeFiles/proj.dir/main.o.requires
+proj/CMakeFiles/proj.dir/requires: proj/CMakeFiles/proj.dir/Application.o.requires
 .PHONY : proj/CMakeFiles/proj.dir/requires
 
 proj/CMakeFiles/proj.dir/clean:

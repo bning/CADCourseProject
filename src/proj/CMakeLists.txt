@@ -2,7 +2,7 @@ include_directories(
 	${PROJECT_SOURCE_DIR}
 )
 
-add_executable(proj main.cpp)
+add_executable(proj main.cpp Application.cpp)
 target_link_libraries(proj prelim trans postproc)
 
 install(TARGETS proj DESTINATION ${PROJECT_SOURCE_DIR}/..)

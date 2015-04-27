@@ -121,12 +121,12 @@ proj/preinstall:
 # Target rules for target proj/CMakeFiles/proj.dir
 
 # All Build rule for target.
+proj/CMakeFiles/proj.dir/all: postproc/CMakeFiles/postproc.dir/all
 proj/CMakeFiles/proj.dir/all: prelim/CMakeFiles/prelim.dir/all
 proj/CMakeFiles/proj.dir/all: trans/CMakeFiles/trans.dir/all
-proj/CMakeFiles/proj.dir/all: postproc/CMakeFiles/postproc.dir/all
 	$(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/depend
 	$(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  4 5
 	@echo "Built target proj"
 .PHONY : proj/CMakeFiles/proj.dir/all
 
@@ -136,7 +136,7 @@ all: proj/CMakeFiles/proj.dir/all
 
 # Build rule for subdir invocation for target.
 proj/CMakeFiles/proj.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 proj/CMakeFiles/proj.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles 0
 .PHONY : proj/CMakeFiles/proj.dir/rule
@@ -176,7 +176,7 @@ trans/preinstall:
 trans/CMakeFiles/trans.dir/all:
 	$(MAKE) -f trans/CMakeFiles/trans.dir/build.make trans/CMakeFiles/trans.dir/depend
 	$(MAKE) -f trans/CMakeFiles/trans.dir/build.make trans/CMakeFiles/trans.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  6
 	@echo "Built target trans"
 .PHONY : trans/CMakeFiles/trans.dir/all
 
@@ -226,7 +226,7 @@ util/preinstall:
 util/CMakeFiles/util.dir/all:
 	$(MAKE) -f util/CMakeFiles/util.dir/build.make util/CMakeFiles/util.dir/depend
 	$(MAKE) -f util/CMakeFiles/util.dir/build.make util/CMakeFiles/util.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  6 7 8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  7 8 9
 	@echo "Built target util"
 .PHONY : util/CMakeFiles/util.dir/all
 
