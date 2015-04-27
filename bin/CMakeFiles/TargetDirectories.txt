@@ -1,0 +1,4 @@
+/home/bo/Documents/CAD/CADCourseProject/bin/prelim/CMakeFiles/prelim.dir
+/home/bo/Documents/CAD/CADCourseProject/bin/proj/CMakeFiles/proj.dir
+/home/bo/Documents/CAD/CADCourseProject/bin/trans/CMakeFiles/trans.dir
+/home/bo/Documents/CAD/CADCourseProject/bin/util/CMakeFiles/util.dir

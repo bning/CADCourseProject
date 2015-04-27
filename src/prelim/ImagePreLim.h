@@ -11,24 +11,23 @@
 
 using namespace std;
 
-class ImagePreLim : public ParamMap
-{
-	private:
-		string outputFolderName;
-		string inputFolderName;
+class ImagePreLim: public ParamMap {
+private:
+	string outputFolderName;
+	string inputFolderName;
 
-		string imageFileName;
-		int nRows;
-		int nCols;
+	string imageFileName;
+	int nRows;
+	int nCols;
 
-		int doSubDivide;
+	int doSubDivide;
 
-	public:
-		ImagePreLim(char *name);
-		void ReadImage(vector<vector<Vertex> > &image);
+public:
+	ImagePreLim(char *name);
+	void ReadImage(vector<vector<Vertex> > &image);
 
-	private:
-		void ReadCSVimage(string fileName, vector<int> &array);
+private:
+	void ReadCSVimage(string fileName, vector<int> &array);
 
 };
 

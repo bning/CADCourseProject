@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bo/Documents/CAD/CADCourseProject/src/util/Line2.cpp
+Line2.h
+/home/bo/Documents/CAD/CADCourseProject/src/util/Line2.h
+
+/home/bo/Documents/CAD/CADCourseProject/src/util/Line2.h
+Vector2.h
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector2.h
+
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector2.cpp
+Vector2.h
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector2.h
+
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector2.h
+cassert
+-
+cmath
+-
+iostream
+-
+
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector3.cpp
+Vector3.h
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector3.h
+
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector3.h
+cassert
+-
+cmath
+-
+Vector2.h
+/home/bo/Documents/CAD/CADCourseProject/src/util/Vector2.h
+

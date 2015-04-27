@@ -12,6 +12,5 @@ int main(int argc, char* argv[])
 	i2t.QuadTreeSub();
 	i2t.MeshGenerator();
 	i2t.WriteTriMesh(fn2);
-
 	return 0;
 }
