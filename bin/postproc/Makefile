@@ -110,14 +110,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(CMAKE_COMMAND) -E cmake_progress_start /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles /home/bo/Documents/CAD/CADCourseProject/bin/postproc/CMakeFiles/progress.marks
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f CMakeFiles/Makefile2 postproc/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f CMakeFiles/Makefile2 postproc/clean
 .PHONY : clean
 
 # The main clean target
@@ -126,83 +126,47 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f CMakeFiles/Makefile2 postproc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f CMakeFiles/Makefile2 postproc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named prelim
+# Convenience name for target.
+postproc/CMakeFiles/postproc.dir/rule:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f CMakeFiles/Makefile2 postproc/CMakeFiles/postproc.dir/rule
+.PHONY : postproc/CMakeFiles/postproc.dir/rule
 
-# Build rule for target.
-prelim: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 prelim
-.PHONY : prelim
-
-# fast build rule for target.
-prelim/fast:
-	$(MAKE) -f prelim/CMakeFiles/prelim.dir/build.make prelim/CMakeFiles/prelim.dir/build
-.PHONY : prelim/fast
-
-#=============================================================================
-# Target rules for targets named proj
-
-# Build rule for target.
-proj: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 proj
-.PHONY : proj
-
-# fast build rule for target.
-proj/fast:
-	$(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/build
-.PHONY : proj/fast
-
-#=============================================================================
-# Target rules for targets named trans
-
-# Build rule for target.
-trans: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 trans
-.PHONY : trans
-
-# fast build rule for target.
-trans/fast:
-	$(MAKE) -f trans/CMakeFiles/trans.dir/build.make trans/CMakeFiles/trans.dir/build
-.PHONY : trans/fast
-
-#=============================================================================
-# Target rules for targets named util
-
-# Build rule for target.
-util: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 util
-.PHONY : util
-
-# fast build rule for target.
-util/fast:
-	$(MAKE) -f util/CMakeFiles/util.dir/build.make util/CMakeFiles/util.dir/build
-.PHONY : util/fast
-
-#=============================================================================
-# Target rules for targets named postproc
-
-# Build rule for target.
-postproc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 postproc
+# Convenience name for target.
+postproc: postproc/CMakeFiles/postproc.dir/rule
 .PHONY : postproc
 
 # fast build rule for target.
 postproc/fast:
-	$(MAKE) -f postproc/CMakeFiles/postproc.dir/build.make postproc/CMakeFiles/postproc.dir/build
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f postproc/CMakeFiles/postproc.dir/build.make postproc/CMakeFiles/postproc.dir/build
 .PHONY : postproc/fast
+
+# target to build an object file
+PostProcessor.o:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f postproc/CMakeFiles/postproc.dir/build.make postproc/CMakeFiles/postproc.dir/PostProcessor.o
+.PHONY : PostProcessor.o
+
+# target to preprocess a source file
+PostProcessor.i:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f postproc/CMakeFiles/postproc.dir/build.make postproc/CMakeFiles/postproc.dir/PostProcessor.i
+.PHONY : PostProcessor.i
+
+# target to generate assembly for a file
+PostProcessor.s:
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(MAKE) -f postproc/CMakeFiles/postproc.dir/build.make postproc/CMakeFiles/postproc.dir/PostProcessor.s
+.PHONY : PostProcessor.s
 
 # Help Target
 help:
@@ -215,12 +179,11 @@ help:
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... rebuild_cache"
-	@echo "... prelim"
-	@echo "... proj"
-	@echo "... trans"
-	@echo "... util"
 	@echo "... postproc"
+	@echo "... rebuild_cache"
+	@echo "... PostProcessor.o"
+	@echo "... PostProcessor.i"
+	@echo "... PostProcessor.s"
 .PHONY : help
 
 
@@ -232,6 +195,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/bo/Documents/CAD/CADCourseProject/bin && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

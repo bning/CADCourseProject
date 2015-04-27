@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bo/Documents/CAD/CADCourseProject/src/postproc/PostProcessor.cpp
+PostProcessor.h
+/home/bo/Documents/CAD/CADCourseProject/src/postproc/PostProcessor.h
+
+/home/bo/Documents/CAD/CADCourseProject/src/postproc/PostProcessor.h
+

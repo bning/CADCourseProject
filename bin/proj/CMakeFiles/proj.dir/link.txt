@@ -1,1 +1,1 @@
-/usr/bin/c++       CMakeFiles/proj.dir/main.o  -o proj -rdynamic ../prelim/libprelim.a ../trans/libtrans.a 
+/usr/bin/c++       CMakeFiles/proj.dir/main.o  -o proj -rdynamic ../prelim/libprelim.a ../trans/libtrans.a ../postproc/libpostproc.a 

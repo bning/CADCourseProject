@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpostproc.a  CMakeFiles/postproc.dir/PostProcessor.o
+/usr/bin/ranlib libpostproc.a

@@ -83,6 +83,7 @@ proj/proj: proj/CMakeFiles/proj.dir/main.o
 proj/proj: proj/CMakeFiles/proj.dir/build.make
 proj/proj: prelim/libprelim.a
 proj/proj: trans/libtrans.a
+proj/proj: postproc/libpostproc.a
 proj/proj: proj/CMakeFiles/proj.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable proj"
 	cd /home/bo/Documents/CAD/CADCourseProject/bin/proj && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/proj.dir/link.txt --verbose=$(VERBOSE)

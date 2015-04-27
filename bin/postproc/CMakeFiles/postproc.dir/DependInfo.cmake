@@ -4,15 +4,12 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/bo/Documents/CAD/CADCourseProject/src/proj/main.cpp" "/home/bo/Documents/CAD/CADCourseProject/bin/proj/CMakeFiles/proj.dir/main.o"
+  "/home/bo/Documents/CAD/CADCourseProject/src/postproc/PostProcessor.cpp" "/home/bo/Documents/CAD/CADCourseProject/bin/postproc/CMakeFiles/postproc.dir/PostProcessor.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/bo/Documents/CAD/CADCourseProject/bin/prelim/CMakeFiles/prelim.dir/DependInfo.cmake"
-  "/home/bo/Documents/CAD/CADCourseProject/bin/trans/CMakeFiles/trans.dir/DependInfo.cmake"
-  "/home/bo/Documents/CAD/CADCourseProject/bin/postproc/CMakeFiles/postproc.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

@@ -3,6 +3,6 @@ include_directories(
 )
 
 add_executable(proj main.cpp)
-target_link_libraries(proj prelim trans)
+target_link_libraries(proj prelim trans postproc)
 
 install(TARGETS proj DESTINATION ${PROJECT_SOURCE_DIR}/..)
