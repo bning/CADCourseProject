@@ -16,7 +16,7 @@ void Application::run() {
 	Image2TriMesh_2D trans;
 
 	imgPre.ReadImage(image);
-	printImage();
+	// printImage();
 
 	cout << ">> Starting Transformation..." << endl;
 	// Do the mesh generation process to fill #vertices# #triangles# and #quadTree#

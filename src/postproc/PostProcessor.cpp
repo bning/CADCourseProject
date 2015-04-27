@@ -70,6 +70,7 @@ void PostProcessor::writeVRML(const string& dir, const string& inFileName) {
 	ofstream fs;
 	fs.open(outPath.c_str(), std::fstream::out);
 	writeImageVRML(fs);
+	writeTreeVRML(fs);
 	writeMeshVRML(fs);
 	writeAxesVRML(fs);
 	writeInfoVRML(fs);
@@ -215,3 +216,52 @@ void PostProcessor::writeEachMeshTriangleVRML(ofstream& of, int index) {
 	of << "}" << std::endl;
 	of << std::endl;
 }
+
+void PostProcessor::writeTreeVRML(ofstream& of) {
+	for (int i = 0; i < quadPtr->size(); ++i) {
+		writeEachTreeCellVRML(of, i);
+	}
+}
+
+void PostProcessor::writeEachTreeCellVRML(ofstream& of, int index) {
+	int ind_a = (*triPtr)[index].id[0];
+	int ind_b = (*triPtr)[index].id[1];
+	int ind_c = (*triPtr)[index].id[2];
+	int ind_d;
+	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], 0);
+	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], 0);
+	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], 0);
+	Vector3 vtx_d;
+	of << "Shape {" << std::endl;
+		of << "\t geometry IndexedLineSet {" << std::endl;
+			of << "\t\t colorPerVertex FALSE" << std::endl;
+			of << "\t\t coord Coordinate {" << std::endl;
+				of << "\t\t\t point [" << std::endl;
+					of << "\t\t\t\t " << vtx_a.x << " " << vtx_a.y << " " << vtx_a.z << std::endl;
+					of << "\t\t\t\t " << vtx_b.x << " " << vtx_b.y << " " << vtx_b.z << std::endl;
+					of << "\t\t\t\t " << vtx_c.x << " " << vtx_c.y << " " << vtx_c.z << std::endl;
+					of << "\t\t\t\t " << vtx_d.x << " " << vtx_d.y << " " << vtx_d.z << std::endl;
+				of << "\t\t\t ]" << std::endl;
+			of << "\t\t }" << std::endl;
+
+			of << "\t\t coordIndex [" << std::endl;
+				of << "\t\t\t 0 1 -1" << std::endl;
+				of << "\t\t\t 1 2 -1" << std::endl;
+				of << "\t\t\t 2 3 -1" << std::endl;
+				of << "\t\t\t 3 0 -1" << std::endl;
+			of << "\t\t ]" << std::endl;
+
+			of << "\t\t color Color {" << std::endl;
+				of << "\t\t\t color [" << std::endl;
+					of << "\t\t\t\t 0.0 1.0 0.0" << std::endl;
+					of << "\t\t\t\t 0.0 1.0 0.0" << std::endl;
+					of << "\t\t\t\t 0.0 1.0 0.0" << std::endl;
+					of << "\t\t\t\t 0.0 1.0 0.0" << std::endl;
+				of << "\t\t\t ]" << std::endl;
+			of << "\t\t }" << std::endl;
+
+		of << "\t }" << std::endl;
+	of << "}" << std::endl;
+	of << std::endl;
+}
+

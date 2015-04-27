@@ -66,10 +66,6 @@ postproc/PostProcessor.h
 iostream
 -
 
-/home/bo/Documents/CAD/CADCourseProject/src/proj/main.cpp
-Application.h
-/home/bo/Documents/CAD/CADCourseProject/src/proj/Application.h
-
 /home/bo/Documents/CAD/CADCourseProject/src/trans/Image2TriMesh.h
 iostream
 -
