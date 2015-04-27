@@ -27,8 +27,22 @@ private:
 	vector<Triangle>* triPtr;
 	vector<Cell>* quadPtr;
 
-	void writeFacet(int index, ofstream& fs);
-	void writeVertices(int index, ofstream& fs);
+	void writeFacetSTL(int index, ofstream& fs);
+	void writeVerticesSTL(int index, ofstream& fs);
+
+	// background
+	void writeInfoVRML(ofstream& of);
+	// axes
+	void writeAxesVRML(ofstream& fs);
+	// image
+	void writeImageVRML(ofstream& of);
+	void writeEachImageCell(ofstream& of, int row, int col);
+	// mesh
+	void writeMeshVRML(ofstream& of);
+	void writeEachMeshTriangleVRML(ofstream& of, int index);
+	// quad tree
+	void writeTreeVRML(ofstream& of);
+	void writeEachTreeCellVRML(ofstream& of, int index);
 
 public:
 	PostProcessor(vector< vector<Vertex> >* imgPtr, vector< Vertex >* vertPtr, vector<Triangle>* triPtr, vector<Cell>* quadPtr);

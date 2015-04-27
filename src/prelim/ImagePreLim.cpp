@@ -50,6 +50,7 @@ void ImagePreLim::ReadCSVimage(string fileName, vector<int> &array) {
 	strcpy(finalName, fileName.c_str());
 
 	ifstream fileStream(finalName);
+	cout << ">> Reading CSV Image File: " + string(finalName) << endl;;
 	string numStr;
 	int number = 0;
 	int ind = 0;

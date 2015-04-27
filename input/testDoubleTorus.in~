@@ -1,5 +1,5 @@
-outputFolderName = /home/arjun/CADproject/out/
-inputFolderName = /home/arjun/CADproject/input/
+outputFolderName = ../out/
+inputFolderName = ../input/
 
 imageFileName = testDoubleTorus.csv
 imageRows = 128

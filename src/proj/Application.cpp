@@ -29,9 +29,14 @@ void Application::run() {
 
 
 void Application::printImage(void) {
+	cout << ">> Printing the image..." << endl;
 	for (int i = 0; i < image.size(); ++i) {
 		for (int j = 0; j < image[0].size(); ++j) {
-			cout << image[i][j].val;
+			if (image[i][j].val == 1) {
+				cout << "*";
+			} else {
+				cout << " ";
+			}
 		}
 		cout << "" << endl;
 	}

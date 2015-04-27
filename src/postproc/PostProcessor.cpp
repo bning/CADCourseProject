@@ -19,27 +19,29 @@ PostProcessor::PostProcessor(vector<vector<Vertex> >* imgPtr,
 void PostProcessor::writeSTL(const string& dir, const string& inFileName) {
 	string solidName = inFileName.substr(0, inFileName.size() - 4);
 	string outPath = dir + solidName + ".stl";
+	cout << ">> Starting writing STL file: " + outPath << "...";
 	ofstream fs;
-	fs.open("outPath", std::fstream::out);
+	fs.open(outPath.c_str(), std::fstream::out);
 	fs << "solid " << solidName << "\n";
 	for (int i = 0; i < triPtr->size(); i++) {
-		writeFacet(i, fs);
+		writeFacetSTL(i, fs);
 	}
 	fs << "endsolid " << solidName << "\n";
+	cout << "Done." << endl;
 	fs.close();
 	return;
 }
 
-void PostProcessor::writeFacet(int index, ofstream& fs) {
+void PostProcessor::writeFacetSTL(int index, ofstream& fs) {
 	Vector3 norm(0, 0, 1);
 	fs << "    " << "facet normal " << std::scientific << norm.x
 			<< std::scientific << " " << norm.y << std::scientific << " "
 			<< norm.z << std::scientific << "\n";
-	writeVertices(index, fs);
+	writeVerticesSTL(index, fs);
 	fs << "    " << "endfacet\n";
 }
 
-void PostProcessor::writeVertices(int index, ofstream& fs) {
+void PostProcessor::writeVerticesSTL(int index, ofstream& fs) {
 	int ind_a = (*triPtr)[index].id[0];
 	int ind_b = (*triPtr)[index].id[1];
 	int ind_c = (*triPtr)[index].id[2];
@@ -59,8 +61,157 @@ void PostProcessor::writeVertices(int index, ofstream& fs) {
 	fs << "        " << "endloop\n";
 }
 
-void PostProcessor::writeVRML(const string& dir, const string& inFIleName) {
 
+
+void PostProcessor::writeVRML(const string& dir, const string& inFileName) {
+	string solidName = inFileName.substr(0, inFileName.size() - 4);
+	string outPath = dir + solidName + ".wrl";
+	cout << ">> Starting writing VRML file: " + outPath << "...";
+	ofstream fs;
+	fs.open(outPath.c_str(), std::fstream::out);
+	writeImageVRML(fs);
+	writeMeshVRML(fs);
+	writeAxesVRML(fs);
+	writeInfoVRML(fs);
+	cout << "Done." << endl;
+	fs.close();
 	return;
 }
 
+
+void PostProcessor::writeInfoVRML(ofstream &of) {
+	of << "NavigationInfo {" << endl;
+		of << "\t type \"EXAMINE\"" << endl;
+	of << "}" << endl;
+
+	of << "Background {" << endl;
+		of << "\t skyColor 1 1 1" << endl;
+	of << "}" << endl;
+	of << endl;
+}
+
+
+void PostProcessor::writeAxesVRML(ofstream& of) {
+	of << "Shape {" << endl;
+		of << "\t geometry Extrusion {" << endl;
+			of << "\t\t spine [0 0 0, 24 0 0, 24 0 0, 28 0 0]" << endl;
+			of << "\t\t crossSection [1 0, 0 1, -1 0, 0 -1, 1 0]" << endl;
+			of << "\t\t scale [0.1 0.1, 0.1 0.1, 0.4 0.4, 0 0]" << endl;
+		of << "\t }" << endl;
+
+		of << "\t appearance Appearance {" << endl;
+			of << "\t\t material Material {" << endl;
+				of << "\t\t\t diffuseColor 0 0 0" << endl;
+			of << "\t\t }" << endl;
+		of << "\t }" << endl;
+	of << "}" << endl;
+
+	of << "Shape {" << endl;
+		of << "\t geometry Extrusion {" << endl;
+			of << "\t\t spine [0 0 0, 0 24 0, 0 24 0, 0 28 0]" << endl;
+			of << "\t\t crossSection [1 0, 0 1, -1 0, 0 -1, 1 0]" << endl;
+			of << "\t\t scale [0.1 0.1, 0.1 0.1, 0.4 0.4, 0 0]" << endl;
+		of << "\t }" << endl;
+
+		of << "\t appearance Appearance {" << endl;
+			of << "\t\t material Material {" << endl;
+				of << "\t\t\t diffuseColor 0 0 0" << endl;
+			of << "\t\t }" << endl;
+		of << "\t }" << endl;
+	of << "}" << endl;
+
+	of << "Shape {" << endl;
+		of << "\t geometry Extrusion {" << endl;
+			of << "\t\t spine [0 0 0, 0 0 24, 0 0 24, 0 0 28]" << endl;
+			of << "\t\t crossSection [1 0, 0 1, -1 0, 0 -1, 1 0]" << endl;
+			of << "\t\t scale [0.1 0.1, 0.1 0.1, 0.4 0.4, 0 0]" << endl;
+		of << "\t }" << endl;
+
+		of << "\t appearance Appearance {" << endl;
+			of << "\t\t material Material {" << endl;
+				of << "\t\t\t diffuseColor 0 0 0" << endl;
+			of << "\t\t }" << endl;
+		of << "\t }" << endl;
+	of << "}" << endl;
+	of << endl;
+}
+
+
+void PostProcessor::writeImageVRML(ofstream& of) {
+	for (int i = 0; i < imgPtr->size() - 1; ++i) {
+		for (int j = 0; j < (*imgPtr)[0].size(); ++ j) {
+			writeEachImageCell(of, i, j);
+		}
+	}
+}
+
+void PostProcessor::writeEachImageCell(ofstream& of, int row, int col) {
+	of << "Shape {" << endl;
+		of << "\t geometry IndexedFaceSet {" << endl;
+			of << "\t\t coord Coordinate {" << endl;
+				of << "\t\t\t point [" << endl;
+					of << "\t\t\t\t " << (*imgPtr)[row][col].x[0] << " " << (*imgPtr)[row][col].x[1] << " " << 0.0 << endl;
+					of << "\t\t\t\t " << (*imgPtr)[row + 1][col].x[0] << " " << (*imgPtr)[row + 1][col].x[1] << " " << 0.0 << endl;
+					of << "\t\t\t\t " << (*imgPtr)[row + 1][col + 1].x[0] << " " << (*imgPtr)[row + 1][col + 1].x[1] << " " << 0.0 << endl;
+					of << "\t\t\t\t " << (*imgPtr)[row][col + 1].x[0] << " " << (*imgPtr)[row][col + 1].x[1] << " " << 0.0 << endl;
+				of << "\t\t\t ]" << endl;
+			of << "\t\t }" << endl;
+
+			of << "\t\t coordIndex [" << endl;
+				of << "\t\t\t 0 1 2 3 -1" << endl;
+			of << "\t\t ]" << endl;
+		of << "\t }" << endl;
+
+		of << "\t appearance Appearance {" << endl;
+			of << "\t\t material Material {" << endl;
+				double color = 0.25 * ((*imgPtr)[row][col].val + (*imgPtr)[row + 1][col].val + (*imgPtr)[row + 1][col + 1].val + (*imgPtr)[row][col + 1].val);
+				of << "\t\t\t diffuseColor " << color << " " << color << " " << color << endl;
+			of << "\t\t }" << endl;
+		of << "\t }" << endl;
+
+	of << "}" << endl;
+	of << endl;
+}
+
+void PostProcessor::writeMeshVRML(ofstream& of) {
+	for (int i = 0; i < triPtr->size(); ++i) {
+		writeEachMeshTriangleVRML(of, i);
+	}
+}
+
+void PostProcessor::writeEachMeshTriangleVRML(ofstream& of, int index) {
+	int ind_a = (*triPtr)[index].id[0];
+	int ind_b = (*triPtr)[index].id[1];
+	int ind_c = (*triPtr)[index].id[2];
+	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], 0);
+	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], 0);
+	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], 0);
+	of << "Shape {" << std::endl;
+		of << "\t geometry IndexedLineSet {" << std::endl;
+			of << "\t\t colorPerVertex FALSE" << std::endl;
+			of << "\t\t coord Coordinate {" << std::endl;
+				of << "\t\t\t point [" << std::endl;
+					of << "\t\t\t\t " << vtx_a.x << " " << vtx_a.y << " " << vtx_a.z << std::endl;
+					of << "\t\t\t\t " << vtx_b.x << " " << vtx_b.y << " " << vtx_b.z << std::endl;
+					of << "\t\t\t\t " << vtx_c.x << " " << vtx_c.y << " " << vtx_c.z << std::endl;
+				of << "\t\t\t ]" << std::endl;
+			of << "\t\t }" << std::endl;
+
+			of << "\t\t coordIndex [" << std::endl;
+				of << "\t\t\t 0 1 -1" << std::endl;
+				of << "\t\t\t 1 2 -1" << std::endl;
+				of << "\t\t\t 2 0 -1" << std::endl;
+			of << "\t\t ]" << std::endl;
+
+			of << "\t\t color Color {" << std::endl;
+				of << "\t\t\t color [" << std::endl;
+					of << "\t\t\t\t 1.0 0.0 0.0" << std::endl;
+					of << "\t\t\t\t 1.0 0.0 0.0" << std::endl;
+					of << "\t\t\t\t 1.0 0.0 0.0" << std::endl;
+				of << "\t\t\t ]" << std::endl;
+			of << "\t\t }" << std::endl;
+
+		of << "\t }" << std::endl;
+	of << "}" << std::endl;
+	of << std::endl;
+}
