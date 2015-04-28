@@ -69,6 +69,7 @@ void PostProcessor::writeVRML(const string& dir, const string& inFileName) {
 	cout << ">> Starting writing VRML file: " + outPath << "...";
 	ofstream fs;
 	fs.open(outPath.c_str(), std::fstream::out);
+	fs << "#VRML V2.0 utf8" << endl << endl;
 	writeImageVRML(fs);
 	writeTreeVRML(fs);
 	writeMeshVRML(fs);
@@ -166,6 +167,7 @@ void PostProcessor::writeEachImageCell(ofstream& of, int row, int col) {
 		of << "\t appearance Appearance {" << endl;
 			of << "\t\t material Material {" << endl;
 				double color = 0.25 * ((*imgPtr)[row][col].val + (*imgPtr)[row + 1][col].val + (*imgPtr)[row + 1][col + 1].val + (*imgPtr)[row][col + 1].val);
+				color = (color > 0.5) ? 1 : 0;
 				of << "\t\t\t diffuseColor " << color << " " << color << " " << color << endl;
 			of << "\t\t }" << endl;
 		of << "\t }" << endl;
@@ -184,9 +186,9 @@ void PostProcessor::writeEachMeshTriangleVRML(ofstream& of, int index) {
 	int ind_a = (*triPtr)[index].id[0];
 	int ind_b = (*triPtr)[index].id[1];
 	int ind_c = (*triPtr)[index].id[2];
-	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], 0);
-	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], 0);
-	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], 0);
+	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], -2);
+	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], -2);
+	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], -2);
 	of << "Shape {" << std::endl;
 		of << "\t geometry IndexedLineSet {" << std::endl;
 			of << "\t\t colorPerVertex FALSE" << std::endl;
@@ -228,9 +230,9 @@ void PostProcessor::writeEachTreeCellVRML(ofstream& of, int index) {
 	int ind_b = (*triPtr)[index].id[1];
 	int ind_c = (*triPtr)[index].id[2];
 	int ind_d;
-	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], 0);
-	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], 0);
-	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], 0);
+	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], -1);
+	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], -1);
+	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], -1);
 	Vector3 vtx_d;
 	of << "Shape {" << std::endl;
 		of << "\t geometry IndexedLineSet {" << std::endl;

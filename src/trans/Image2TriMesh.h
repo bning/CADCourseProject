@@ -16,6 +16,11 @@ public:
 class Triangle {
 public:
 	int id[3]; //counter-clockwise store IDs of thress vertcies of a triangle
+	Triangle(int x, int y, int z) {
+		id[0] = x;
+		id[1] = y;
+		id[2] = z;
+	}
 };
 
 class Cell {

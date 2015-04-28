@@ -16,7 +16,7 @@ void Application::run() {
 	Image2TriMesh_2D trans;
 
 	imgPre.ReadImage(image);
-	// printImage();
+	//printImage();
 
 	cout << ">> Starting Transformation..." << endl;
 	// Do the mesh generation process to fill #vertices# #triangles# and #quadTree#
@@ -26,7 +26,6 @@ void Application::run() {
 	post.writeSTL(imgPre.getOutputFolderName(), imgPre.getImageFileName());
 	post.writeVRML(imgPre.getOutputFolderName(), imgPre.getImageFileName());
 }
-
 
 void Application::printImage(void) {
 	cout << ">> Printing the image..." << endl;

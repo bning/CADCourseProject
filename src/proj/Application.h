@@ -22,7 +22,6 @@ using namespace std;
 class Application {
 private:
 	char* path;
-
 	vector< vector<Vertex> > image;
 	vector<Vertex> vertices;
 	vector<Triangle> triangles;
