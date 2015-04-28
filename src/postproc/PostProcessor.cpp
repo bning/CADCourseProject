@@ -141,7 +141,7 @@ void PostProcessor::writeAxesVRML(ofstream& of) {
 
 void PostProcessor::writeImageVRML(ofstream& of) {
 	for (int i = 0; i < imgPtr->size() - 1; ++i) {
-		for (int j = 0; j < (*imgPtr)[0].size(); ++ j) {
+		for (int j = 0; j < (*imgPtr)[0].size() - 1; ++j) {
 			writeEachImageCell(of, i, j);
 		}
 	}
@@ -226,14 +226,14 @@ void PostProcessor::writeTreeVRML(ofstream& of) {
 }
 
 void PostProcessor::writeEachTreeCellVRML(ofstream& of, int index) {
-	int ind_a = (*triPtr)[index].id[0];
-	int ind_b = (*triPtr)[index].id[1];
-	int ind_c = (*triPtr)[index].id[2];
-	int ind_d;
-	Vector3 vtx_a ((*vertPtr)[ind_a].x[0], (*vertPtr)[ind_a].x[1], -1);
-	Vector3 vtx_b ((*vertPtr)[ind_b].x[0], (*vertPtr)[ind_b].x[1], -1);
-	Vector3 vtx_c ((*vertPtr)[ind_c].x[0], (*vertPtr)[ind_c].x[1], -1);
-	Vector3 vtx_d;
+	int ind_a = (*quadPtr)[index].corner[0];
+	int ind_b = (*quadPtr)[index].corner[1];
+	int ind_c = (*quadPtr)[index].corner[2];
+	int ind_d = (*quadPtr)[index].corner[3];
+	Vector3 vtx_a ((*imgPtr)[ind_a/(*imgPtr)[0].size()][ind_a%(*imgPtr)[0].size()].x[0], (*imgPtr)[ind_a/(*imgPtr)[0].size()][ind_a%(*imgPtr)[0].size()].x[1], -1);
+	Vector3 vtx_b ((*imgPtr)[ind_b/(*imgPtr)[0].size()][ind_b%(*imgPtr)[0].size()].x[0], (*imgPtr)[ind_b/(*imgPtr)[0].size()][ind_b%(*imgPtr)[0].size()].x[1], -1);
+	Vector3 vtx_c ((*imgPtr)[ind_c/(*imgPtr)[0].size()][ind_c%(*imgPtr)[0].size()].x[0], (*imgPtr)[ind_c/(*imgPtr)[0].size()][ind_c%(*imgPtr)[0].size()].x[1], -1);
+	Vector3 vtx_d ((*imgPtr)[ind_d/(*imgPtr)[0].size()][ind_d%(*imgPtr)[0].size()].x[0], (*imgPtr)[ind_d/(*imgPtr)[0].size()][ind_d%(*imgPtr)[0].size()].x[1], -1);;
 	of << "Shape {" << std::endl;
 		of << "\t geometry IndexedLineSet {" << std::endl;
 			of << "\t\t colorPerVertex FALSE" << std::endl;

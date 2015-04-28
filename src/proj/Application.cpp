@@ -13,16 +13,19 @@ Application::Application(char* path) {
 void Application::run() {
 	cout << ">> Starting Pre-processing..." << endl;
 	ImagePreLim imgPre(path);
-	Image2TriMesh_2D trans;
 
+	// Pre processing
 	imgPre.ReadImage(image);
-	//printImage();
+	// printImage();
 
 	cout << ">> Starting Transformation..." << endl;
 	// Do the mesh generation process to fill #vertices# #triangles# and #quadTree#
+	Image2TriMesh_2D trans;
+	trans.SetProblem(image);
+	trans.UniformMeshGenerator();
 
 	cout << ">> Starting Post-processing..." << endl;
-	PostProcessor post(&image, &vertices, &triangles, &quadTree);
+	PostProcessor post(&image, &trans.tripts, &trans.trimesh, &quadTree);
 	post.writeSTL(imgPre.getOutputFolderName(), imgPre.getImageFileName());
 	post.writeVRML(imgPre.getOutputFolderName(), imgPre.getImageFileName());
 }
