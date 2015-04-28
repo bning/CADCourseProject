@@ -24,6 +24,16 @@ Param.h
 trans/Image2TriMesh.h
 /home/bo/Documents/CAD/CADCourseProject/src/prelim/trans/Image2TriMesh.h
 
+/home/bo/Documents/CAD/CADCourseProject/src/prelim/Param.cpp
+fstream
+-
+stdlib.h
+-
+stdio.h
+-
+Param.h
+/home/bo/Documents/CAD/CADCourseProject/src/prelim/Param.h
+
 /home/bo/Documents/CAD/CADCourseProject/src/prelim/Param.h
 map
 -

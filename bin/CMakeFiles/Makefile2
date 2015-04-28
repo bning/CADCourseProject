@@ -121,9 +121,9 @@ proj/preinstall:
 # Target rules for target proj/CMakeFiles/proj.dir
 
 # All Build rule for target.
-proj/CMakeFiles/proj.dir/all: postproc/CMakeFiles/postproc.dir/all
 proj/CMakeFiles/proj.dir/all: prelim/CMakeFiles/prelim.dir/all
 proj/CMakeFiles/proj.dir/all: trans/CMakeFiles/trans.dir/all
+proj/CMakeFiles/proj.dir/all: postproc/CMakeFiles/postproc.dir/all
 	$(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/depend
 	$(MAKE) -f proj/CMakeFiles/proj.dir/build.make proj/CMakeFiles/proj.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/Documents/CAD/CADCourseProject/bin/CMakeFiles  4 5
