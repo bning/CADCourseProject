@@ -1,7 +1,7 @@
 How to run the code?
 
 
-If you are using the cluster linux maching:
+If you are using the cluster linux machine:
 
 Open a terminal and change to the project root directory (current directory), input:
 ./run.bash 
