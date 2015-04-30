@@ -47,7 +47,7 @@ private:
 public:
 	PostProcessor(vector< vector<Vertex> >* imgPtr, vector< Vertex >* vertPtr, vector<Triangle>* triPtr, vector<Cell>* quadPtr);
 	void writeSTL(const string& dir, const string& inFileName);
-	void writeVRML(const string& dir, const string& inFileName);
+	void writeVRML(const string& dir, const string& inFileName, char* argv1);
 };
 
 #endif /* SRC_POSTPROC_POSTPROCESSOR_H_ */

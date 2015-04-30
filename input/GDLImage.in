@@ -1,0 +1,8 @@
+outputFolderName = out/
+inputFolderName = input/
+
+imageFileName = GDLImage.csv
+imageRows = 479
+imageCols = 402
+
+doSubDivide = 0

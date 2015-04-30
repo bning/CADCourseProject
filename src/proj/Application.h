@@ -27,7 +27,7 @@ private:
 
 public:
 	Application(char* path);
-	void run();
+	void run(char* argv1);
 	void printImage(void);
 };
 

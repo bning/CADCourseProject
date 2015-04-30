@@ -3,7 +3,8 @@
 
 int main(int argc, char* argv[])
 {
-	Application app(argv[1]);
-	app.run();
+	cout << argv[1] << " " << argv[2] << endl;
+	Application app(argv[2]);
+	app.run(argv[1]);
 	return 0;
 }

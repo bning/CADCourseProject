@@ -1,0 +1,18 @@
+How to run the code?
+
+
+If you are using the cluster linux maching:
+
+Open a terminal and change to the project root directory (current directory), input:
+./run.bash 
+
+
+If you are ssh to the afs with remote connection:
+Open a terminal:
+(1) ssh -X your-andrew-id@unix.andrew.cmu.edu (DO NOT FORGET -X)
+(2) Password
+(3) cd /afs/andrew.cmu.edu/course/24/681/handin-4/Visualize
+(4)./run.bash
+
+The output files are in the ./out/ folder, you can also see some screenshots
+

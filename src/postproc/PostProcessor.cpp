@@ -63,16 +63,20 @@ void PostProcessor::writeVerticesSTL(int index, ofstream& fs) {
 
 
 
-void PostProcessor::writeVRML(const string& dir, const string& inFileName) {
+void PostProcessor::writeVRML(const string& dir, const string& inFileName, char* argv1) {
+	string arg = string(argv1);
 	string solidName = inFileName.substr(0, inFileName.size() - 4);
-	string outPath = dir + solidName + ".wrl";
+	string outPath = dir + solidName + arg + ".wrl";
 	cout << ">> Starting writing VRML file: " + outPath << "...";
 	ofstream fs;
 	fs.open(outPath.c_str(), std::fstream::out);
 	fs << "#VRML V2.0 utf8" << endl << endl;
 	writeImageVRML(fs);
 	writeTreeVRML(fs);
-	writeMeshVRML(fs);
+	if (arg != "-t") {
+		cout << "Mesh also written" << endl;
+		writeMeshVRML(fs);
+	}
 	writeAxesVRML(fs);
 	writeInfoVRML(fs);
 	cout << "Done." << endl;
